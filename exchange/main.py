@@ -14,25 +14,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-<<<<<<< HEAD
-=======
 import logging
->>>>>>> origin/pr/2
 import jinja2
 import os
 import webapp2
+from google.appengine.ext import webapp
 # from twilio.rest import TwilioRestClient
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-jinja_environment = jinja2.Environment(loader=
-    jinja2.FileSystemLoader(os.path.dirname(__file__)))
-
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('homepage.html')
-        self.response.out.write(template.render())
+  def get(self):
+    template = jinja_environment.get_template('homepage.html')
+    self.response.out.write(template.render())
 
 
 class ReferenceHandler(webapp2.RequestHandler):
@@ -46,22 +41,20 @@ class ReferenceHandler(webapp2.RequestHandler):
 
 
 class SendSMS(webapp2.RequestHandler):
-    def get(self):
-      messages = Message.query().fetch()
-	  account_sid = "AC07891472f11bf7ef4e186c090b834529"
-      auth_token  = "{{ auth_token }}"
-      client = TwilioRestClient(account_sid, auth_token)
- 
-	  message = client.messages.create(body="Jenny please?! I love you <3",
-    	to="        ",
-        from_="+1404620285029",
-       # media_url="http://www.example.com/hearts.png")
-        print message.sid
-
-routes = {
-	('/references', ReferenceHandler),
-	('/send_sms', Send SMS)
-}
+  def get(self):
+    messages = Message.query().fetch()
+    account_sid = "AC07891472f11bf7ef4e186c090b834529"
+    auth_token  = "{{ auth_token }}"
+    client = TwilioRestClient(account_sid, auth_token)
+    # message = client.messages.create(body="Jenny please?! I love you <3",
+      # to="        ",
+      # from_="+1404620285029",
+      # media_url="http://www.example.com/hearts.png")
+    # print message.sid
 
 
-app = webapp2.WSGIApplication(routes, debug=True)
+app = webapp.WSGIApplication([
+    ('/', MainHandler),
+    ('/references', ReferenceHandler),
+    ('/send_sms', SendSMS)    
+]);

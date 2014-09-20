@@ -1,68 +1,4 @@
-/*Tags*/
-<<<<<<< HEAD
-=======
-body
- {
- 	background-color: #32313B;
- }
-
-h1
- {
- 	font-size: 5em;
- 	text-align: center;
- }
->>>>>>> origin/pr/2
- 
-/*Classes*/
-.image
- {
- 	text-align: center;
- }
-<<<<<<< HEAD
-
-/*Id's*/
-#emailLogin
-  {
-  	text-align: center;
-  	top: 46.15em;
-  }
-#logo
- {
- 	width: 15.38em;
- 	height: 15.38em;
- }
-#header-wrapper
- {
- 	background: #25242C;
-	margin: 0px;
-	padding: 0px;
- }
-#header
-	{
-		position: relative;
-		padding:0em 0.2em 0em 0.2em; 	
-		font-family: 'Squada One', cursive;
-	}
-#wrapper
-	{
-		background: White;
-	}
-#menu
-	{
-		position: relative;	
-		padding:0em 0.2em 0em 0.2em;
-	}
-/*#menu ul*/
-	/*{*/
-		/*display: inline-block;*/
-	/*}*/
-/*#menu li*/
-	/*{*/
-		/*display: block;*/
-		/*float: left;*/
-		/*text-align: center;*/
-	/*}*/
-#menu li a, #menu li span
+li a
 	{
 		padding: 1em 1.5em;
 		letter-spacing: 1px;
@@ -71,32 +7,13 @@ h1
 		font-size: 0.8em;
 		color: Black;
 	}
-#menu li:hover a, #menu li.active a, #menu li.active span
+li:hover 
 	{
 		background: #39B1C6;
 	}
 	
-#menu .current_page_item a
+.current_page_item 
 	{
 		background: #39B1C6;
 		color: #FFF;
 	}
-=======
-/*Id's*/
- #emailLogin
-  {
-  	text-align: center;
-  	top: 600px;
-  }
-#logo
- {
- 	width: 200px;
- 	height: 200px;
- }
-#header-wrapper
- {
- 	background: #39B1C6;
-	margin: 0px;
-	padding: 0px;
- }
->>>>>>> origin/pr/2
