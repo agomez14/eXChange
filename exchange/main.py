@@ -14,10 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+<<<<<<< HEAD
+=======
+import logging
+>>>>>>> origin/pr/2
 import jinja2
 import os
 import webapp2
 # from twilio.rest import TwilioRestClient
+
+jinja_environment = jinja2.Environment(loader=
+    jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -28,19 +35,33 @@ class MainHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 
-#account_sid = "AC07891472f11bf7ef4e186c090b834529"
-#auth_token  = "{{ auth_token }}"
-#client = TwilioRestClient(account_sid, auth_token)
+class ReferenceHandler(webapp2.RequestHandler):
+  def get(self):
+    template_values={}
+    if users.get_current_user():
+      template_values['current_user'] = users.get_current_user()
+      template_values['logoutUrl'] = users.create_logout_url(dest_url = '/loginPage')
+    template = jinja_environment.get_template('reference.html')
+    self.response.out.write(template.render(template_values))
+
+
+class SendSMS(webapp2.RequestHandler):
+    def get(self):
+      messages = Message.query().fetch()
+	  account_sid = "AC07891472f11bf7ef4e186c090b834529"
+      auth_token  = "{{ auth_token }}"
+      client = TwilioRestClient(account_sid, auth_token)
  
-#message = client.messages.create(body="Jenny please?! I love you <3",
- #   to="+15558675309",
-  #  from_="+14158141829",
-   # media_url="http://www.example.com/hearts.png")
-#print message.sid
+	  message = client.messages.create(body="Jenny please?! I love you <3",
+    	to="        ",
+        from_="+1404620285029",
+       # media_url="http://www.example.com/hearts.png")
+        print message.sid
+
+routes = {
+	('/references', ReferenceHandler),
+	('/send_sms', Send SMS)
+}
 
 
-
-
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+app = webapp2.WSGIApplication(routes, debug=True)
