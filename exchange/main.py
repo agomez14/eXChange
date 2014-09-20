@@ -71,9 +71,21 @@ and saved in db.
       break 
 user = User(key_name=str(profile["id"]), id=str(profile["id"]),
             name=profile["name"], access_token=access_token,
-            profile_url=profile["link"])
+            profile_url=profile["link"], crushes=crushes)
 user.put()
-self.redirect('homepage.html')
+self.redirect('/homepage')
+class crushesHandler(webapp2.RequestHandler)
+ crushes = User(crushes=crushes)
+ for crush in crushes
+  likes = { crush['name'] : g.get_connections(crush['id'], "likes")['data']   
+  interests = { crush['name'] : g.get_connections(crush['id'], "interests")['data'] 
+  relationshipstatus = { crush['name'] : g.get_connections(crush['id'], "relationshipstatus")['data'] 
+   relationshipstatus = { crush['name'] : g.get_connections(crush['id'], "status")['data'] 
+  rebound = Crushes(Crushes_id = crush['id'],Name= crush['name'],likes = like,interests = interest,relationshipstatus = relationshipstatus,status = status)
+   #template_values = {'education':edus, 'user':user, }
+    #template = jinja_environment.get_template('education.html')
+    #self.response.out.write(template.render(template_values))
+   self.redirect('/homepage')  
    # user = facebook.get_user_from_cookie(self.request.cookies, key, secret)
     #access_token = 'CAAKDh2VA4l8BAKJxB5IRzI4OhDInZCXsqb1Xqs8dbIXZCprgTKcHGbtfkYmz8B4MNIZAKKUTvZCIRCv3jW894T5ZAHBxe5YrorNQGV6uvGVrOsqeoDql7GdPSl8u5H011hlw7WZCpdiPY86k2J6IWFjkZAVopZAxcd01HP0LKfNV5MJBaeGXyCAS2RFHYvKEBqpQQZCmI68Tt7wWGnVDKMENIC9kQtSaoZA74ZD'
     #if user =
