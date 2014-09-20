@@ -61,10 +61,11 @@ class signUphandler(webapp2.RequestHandler):
         count = count + 1;
         if count > 5
         break 
-        user = User(key_name=str(profile["id"]), id=str(profile["id"]),
+    user = User(key_name=str(profile["id"]), id=str(profile["id"]),
             name=profile["name"], access_token=access_token,
             profile_url=profile["link"])
     user.put()
+    self.redirect('homepage.html')
    # user = facebook.get_user_from_cookie(self.request.cookies, key, secret)
     #access_token = 'CAAKDh2VA4l8BAKJxB5IRzI4OhDInZCXsqb1Xqs8dbIXZCprgTKcHGbtfkYmz8B4MNIZAKKUTvZCIRCv3jW894T5ZAHBxe5YrorNQGV6uvGVrOsqeoDql7GdPSl8u5H011hlw7WZCpdiPY86k2J6IWFjkZAVopZAxcd01HP0LKfNV5MJBaeGXyCAS2RFHYvKEBqpQQZCmI68Tt7wWGnVDKMENIC9kQtSaoZA74ZD'
     #if user =
