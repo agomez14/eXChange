@@ -15,7 +15,7 @@
 # limitations under the License.
 #import webapp2
 from operator import itemgetter
-import facebook
+from Facebook import Facebook
 from xhtml2pdf import pisa
 import cStringIO as StringIO
 import time
@@ -59,8 +59,8 @@ class signUphandler(webapp2.RequestHandler):
       if crush == str(friend['name']):
         crushes.append(crush)
         count = count + 1;
-        if count > 5
-        break 
+        if count > 5:
+          break 
     user = User(key_name=str(profile["id"]), id=str(profile["id"]),
             name=profile["name"], access_token=access_token,
             profile_url=profile["link"])

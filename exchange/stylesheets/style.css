@@ -1,0 +1,69 @@
+/*Tags*/
+ 
+/*Classes*/
+.image
+ {
+ 	text-align: center;
+ }
+
+/*Id's*/
+#emailLogin
+  {
+  	text-align: center;
+  	top: 46.15em;
+  }
+#logo
+ {
+ 	width: 15.38em;
+ 	height: 15.38em;
+ }
+#header-wrapper
+ {
+ 	background: #25242C;
+	margin: 0px;
+	padding: 0px;
+ }
+#header
+	{
+		position: relative;
+		padding:0em 0.2em 0em 0.2em; 	
+		font-family: 'Squada One', cursive;
+	}
+#wrapper
+	{
+		background: White;
+	}
+#menu
+	{
+		position: relative;	
+		padding:0em 0.2em 0em 0.2em;
+	}
+/*#menu ul*/
+	/*{*/
+		/*display: inline-block;*/
+	/*}*/
+/*#menu li*/
+	/*{*/
+		/*display: block;*/
+		/*float: left;*/
+		/*text-align: center;*/
+	/*}*/
+#menu li a, #menu li span
+	{
+		padding: 1em 1.5em;
+		letter-spacing: 1px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 0.8em;
+		color: Black;
+	}
+#menu li:hover a, #menu li.active a, #menu li.active span
+	{
+		background: #39B1C6;
+	}
+	
+#menu .current_page_item a
+	{
+		background: #39B1C6;
+		color: #FFF;
+	}
