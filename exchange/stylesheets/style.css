@@ -1,7 +1,7 @@
 /*Tags*/
 body
  {
- 	background-color: 
+ 	background-color: #32313B;
  }
 
 h1
@@ -25,4 +25,10 @@ h1
  {
  	width: 200px;
  	height: 200px;
+ }
+#header-wrapper
+ {
+ 	background: #39B1C6;
+	margin: 0px;
+	padding: 0px;
  }
