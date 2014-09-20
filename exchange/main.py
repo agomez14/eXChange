@@ -17,6 +17,7 @@
 import jinja2
 import os
 import webapp2
+from twilio.rest import TwilioRestClient
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -25,6 +26,20 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('homepage.html')
         self.response.out.write(template.render())
+
+
+#account_sid = "AC07891472f11bf7ef4e186c090b834529"
+#auth_token  = "{{ auth_token }}"
+#client = TwilioRestClient(account_sid, auth_token)
+ 
+#message = client.messages.create(body="Jenny please?! I love you <3",
+ #   to="+15558675309",
+  #  from_="+14158141829",
+   # media_url="http://www.example.com/hearts.png")
+#print message.sid
+
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
