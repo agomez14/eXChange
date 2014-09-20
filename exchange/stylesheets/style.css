@@ -1,0 +1,28 @@
+/*Tags*/
+body
+ {
+ 	background-color: 
+ }
+
+h1
+ {
+ 	font-size: 5em;
+ 	text-align: center;
+ }
+ 
+/*Classes*/
+.image
+ {
+ 	text-align: center;
+ }
+/*Id's*/
+ #emailLogin
+  {
+  	text-align: center;
+  	top: 600px;
+  }
+#logo
+ {
+ 	width: 200px;
+ 	height: 200px;
+ }
