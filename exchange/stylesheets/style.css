@@ -4,19 +4,29 @@ body
  	background-color: #32313B;
  }
 
-h1
- {
- 	font-size: 5em;
- 	text-align: center;
- }
+h1, h2, h3
+	{
+		margin: 0;
+		padding: 0;
+		font-weight: 700;
+		color: #EC3F8C;
+		font-size: 5em;
+	}
  
 /*Classes*/
 .image
  {
  	text-align: center;
  }
+.container
+	{
+		overflow: hidden;
+		margin: 0em auto;
+		width: 1000px;
+	}
+
 /*Id's*/
- #emailLogin
+#emailLogin
   {
   	text-align: center;
   	top: 600px;
@@ -28,7 +38,52 @@ h1
  }
 #header-wrapper
  {
- 	background: #39B1C6;
+ 	background: #25242C;
 	margin: 0px;
 	padding: 0px;
  }
+#header
+	{
+		position: relative;
+		padding:0em 0.2em 0em 0.2em;
+		font-family: 'Squada One', cursive;
+	}
+#wrapper
+	{
+		background: White;
+	}
+#menu
+	{
+		position: relative;
+		text-align: right;	
+		padding:0em 0.2em 0em 0.2em;
+	}
+#menu ul
+	{
+		display: inline-block;
+	}
+#menu li
+	{
+		display: block;
+		float: left;
+		text-align: center;
+	}
+#menu li a, #menu li span
+	{
+		padding: 1em 1.5em;
+		letter-spacing: 1px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 0.8em;
+		color: #FFF;
+	}
+#menu li:hover a, #menu li.active a, #menu li.active span
+	{
+		background: #39B1C6;
+	}
+	
+#menu .current_page_item a
+	{
+		background: #39B1C6;
+		color: #FFF;
+	}

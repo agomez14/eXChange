@@ -17,7 +17,7 @@
 import jinja2
 import os
 import webapp2
-from twilio.rest import TwilioRestClient
+# from twilio.rest import TwilioRestClient
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
