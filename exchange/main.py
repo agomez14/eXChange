@@ -23,12 +23,12 @@ class MainHandler(webapp2.RequestHandler):
 
 
 #account_sid = "AC07891472f11bf7ef4e186c090b834529"
-#auth_token  = "{{ auth_token }}"
+#auth_token  = "1f93a9b00990423290998f8b0c9ab1b6"
 #client = TwilioRestClient(account_sid, auth_token)
  
 #message = client.messages.create(body="Jenny please?! I love you <3",
- #   to="+15558675309",
-  #  from_="+14158141829",
+ #   to="ENTER TEXT HERE",
+  #  from_="+14046202850",
    # media_url="http://www.example.com/hearts.png")
 #print message.sid
 
