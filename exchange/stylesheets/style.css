@@ -1,0 +1,34 @@
+/*Tags*/
+body
+ {
+ 	background-color: #32313B;
+ }
+
+h1
+ {
+ 	font-size: 5em;
+ 	text-align: center;
+ }
+ 
+/*Classes*/
+.image
+ {
+ 	text-align: center;
+ }
+/*Id's*/
+ #emailLogin
+  {
+  	text-align: center;
+  	top: 600px;
+  }
+#logo
+ {
+ 	width: 200px;
+ 	height: 200px;
+ }
+#header-wrapper
+ {
+ 	background: #39B1C6;
+	margin: 0px;
+	padding: 0px;
+ }
