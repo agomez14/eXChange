@@ -15,8 +15,8 @@
 # limitations under the License.
 #import webapp2
 from operator import itemgetter
-from Facebook import Facebook
-from xhtml2pdf import pisa
+# from Facebook import Facebook
+# from xhtml2pdf import pisa
 import cStringIO as StringIO
 import time
 import cookielib
@@ -36,8 +36,9 @@ jinja_environment = jinja2.Environment(loader=
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
+    template_values = {}
     self.response.delete_cookie('userid')
-    template = jinja_environment.get_template('homepage.html')
+    template = jinja_environment.get_template('index.html')
     self.response.out.write(template.render(template_values))
 
 class signUphandler(webapp2.RequestHandler):
