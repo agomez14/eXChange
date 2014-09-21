@@ -95,7 +95,15 @@ class crushesHandler(webapp2.RequestHandler)
     #likes = { friend['name'] : g.get_connections(friend['id'], "likes")['data']   
     #interests = { friend['name'] : g.get_connections(friend['id'], "interests")['data'] 
     #relationshipstatus = { friend['name'] : g.get_connections(friend['id'], "interests")['data'] 
-
+class HomePageHandler(webapp2.RequestHandler):
+def get(self):
+user = User(key_name=str(profile["id"]), id=str(profile["id"]),
+            name=profile["name"], access_token=access_token,
+            profile_url=profile["link"], crushes=crushes)
+crushes = Crushes(Crushes_id = crush['id'],Name= crush['name'],likes = like,interests = interest,relationshipstatus = relationshipstatus,status = status)
+template_values = {'crushes': crushes, 'user':user}
+template = jinja_environment.get_template('homepage.html')
+self.response.out.write(template.render(template_values))
 
 class ReferenceHandler(webapp2.RequestHandler):
   def get(self):
