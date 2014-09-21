@@ -1,21 +1,5 @@
-#!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#import webapp2
 from operator import itemgetter
-# from Facebook import Facebook
+from facebook import Facebook
 # from xhtml2pdf import pisa
 import cStringIO as StringIO
 import time
@@ -70,11 +54,19 @@ class signUphandler(webapp2.RequestHandler):
 
 class crushesHandler(webapp2.RequestHandler)
   crushes = User(crushes=crushes)
+<<<<<<< HEAD
   for crush in crushes
     likes = { crush['name'] : g.get_connections(crush['id'], "likes")['data']   
     interests = { crush['name'] : g.get_connections(crush['id'], "interests")['data'] 
     relationshipstatus = { crush['name'] : g.get_connections(crush['id'], "relationshipstatus")['data'] 
     relationshipstatus = { crush['name'] : g.get_connections(crush['id'], "status")['data'] 
+=======
+  
+    likes = { crush['name'] : g.get_connections(crush['id'], "likes")['data']   for crush in crushes }
+    interests = { crush['name'] : g.get_connections(crush['id'], "interests")['data'] for crush in crushes }
+    relationshipstatus = { crush['name'] : g.get_connections(crush['id'], "relationship_status")['data'] for crush in crushes }
+    relationshipstatus = { crush['name'] : g.get_connections(crush['id'], "status")['data'] for crush in crushes }
+>>>>>>> origin/pr/7
     rebound = Crushes(Crushes_id = crush['id'],Name= crush['name'],likes = like,interests = interest,relationshipstatus = relationshipstatus,status = status)
    #template_values = {'education':edus, 'user':user, }
     #template = jinja_environment.get_template('education.html')
